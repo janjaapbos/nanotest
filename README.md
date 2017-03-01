@@ -13,6 +13,10 @@ Then continue below.
 For Alpine:
 apk add alpine-sdk python-dev libffi-dev
 
+Set the time zone, e.g. UTC, like:
+https://wiki.alpinelinux.org/wiki/Setting_the_timezone
+
+
 ```
 pip install virtualenv
 virtualenv env

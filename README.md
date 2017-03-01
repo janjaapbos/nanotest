@@ -2,6 +2,11 @@
 Testing nanomsg
 
 
+First install nanomsg:
+https://github.com/nanomsg/nanomsg
+
+Then continue below.
+
 ```
 pip install virtualenv
 virtualenv env

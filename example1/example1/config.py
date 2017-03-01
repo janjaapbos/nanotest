@@ -1,1 +1,1 @@
-ctl_url = 'ipc:///tmp/oi-ceagjduqrt.sock'
+ctl_url = 'ipc:///tmp/oi-nzdsxkapot.sock'

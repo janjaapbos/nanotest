@@ -35,7 +35,6 @@ class Service(service.Service):
             setup_scheduler(self.program)
             self.program.run()
             scheduler.shutdown()
-            #self.logger.info("Stopping")
             logging.info("Stopping")
         self.program.stop_function()
 

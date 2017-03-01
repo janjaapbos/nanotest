@@ -2,7 +2,7 @@
 Testing nanomsg
 
 
-`
+```
 pip install virtualenv
 virtualenv env
 . env/bin/activate
@@ -14,4 +14,4 @@ python setup.py install
 cd ../apscheduler
 python setup.py install
 
-`
+```

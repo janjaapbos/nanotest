@@ -5,6 +5,9 @@ Testing nanomsg
 First install nanomsg:
 https://github.com/nanomsg/nanomsg
 
+For Alpine:
+Create links in /usr/local/lib for nanomsg from /usr/local/lib64, or better fix how cffi finds the nanomsg library in /usr/local/lib64. ;-)
+
 Then continue below.
 
 For Alpine:

@@ -1,9 +1,9 @@
 [submodule "modules/oi"]
 	path = modules/oi
-	url = git@github.com:janjaapbos/oi.git
+	url = https://github.com/janjaapbos/oi.git
 [submodule "modules/nanoservice"]
 	path = modules/nanoservice
-	url = git@github.com:janjaapbos/nanoservice.git
+	url = https://github.com/janjaapbos/nanoservice.git
 [submodule "modules/apscheduler"]
 	path = modules/apscheduler
-	url = git@github.com:janjaapbos/apscheduler.git
+	url = https://github.com/janjaapbos/apscheduler.git

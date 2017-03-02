@@ -2,20 +2,18 @@
 Testing nanomsg
 
 
-First install nanomsg:
-https://github.com/nanomsg/nanomsg
-
 For Alpine:
-Create links in /usr/local/lib for nanomsg from /usr/local/lib64, or better fix how cffi finds the nanomsg library in /usr/local/lib64. ;-)
+Link /usr/local/lib to /usr/local/lib64, or better fix how cffi finds the nanomsg library in /usr/local/lib64. ;-)
 
-Then continue below.
-
-For Alpine:
-apk add alpine-sdk python-dev libffi-dev
+apk add cmake alpine-sdk python-dev libffi-dev py2-pip
 
 Set the time zone, e.g. UTC, like:
 https://wiki.alpinelinux.org/wiki/Setting_the_timezone
 
+First install nanomsg:
+https://github.com/nanomsg/nanomsg
+
+Then continue below.
 
 ```
 pip install virtualenv

@@ -66,7 +66,7 @@ git clone https://github.com/pyinstaller/pyinstaller.git tmppyinstaller \
     && cd tmppyinstaller/bootloader \
     && python ./waf configure --no-lsb all \
     && pip install .. \
-    && cd ../..
+    && cd ../.. \
     && rm -Rf tmppyinstaller
 ```
 

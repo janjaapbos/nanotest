@@ -21,9 +21,9 @@ virtualenv env
 . env/bin/activate
 pip install cffi  nnpy pyinstaller service sqlalchemy
 cd modules/nanoservice
-python setup.py install
+make install
 cd ../oi
-python setup.py install
+make install
 cd ../apscheduler
 python setup.py install
 

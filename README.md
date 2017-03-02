@@ -23,9 +23,11 @@ virtualenv env
 pip install --upgrade pip
 ```
 
-For Alpine build custom pyinstaller
+For Alpine build custom pyinstaller and ldd wrapper
 (see https://github.com/gliderlabs/docker-alpine/issues/48 and
 https://github.com/six8/pyinstaller-alpine)
+
+Alpine ldd wrapper
 ```
 cat <<EOM >env/bin/ldd
 #!/bin/sh
@@ -43,7 +45,10 @@ exec /usr/bin/ldd "$@" | \
     sed -r 's/ldd \(.*\)//g'
 EOM
 chmod a+x env/bin/ldd
+```
 
+Alpine pyinstaller
+```
 # PyInstaller needs zlib-dev, gcc, libc-dev, and musl-dev
 apk --update --no-cache add \
     zlib-dev \

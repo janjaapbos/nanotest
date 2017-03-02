@@ -70,7 +70,7 @@ git clone https://github.com/pyinstaller/pyinstaller.git tmppyinstaller \
     && rm -Rf tmppyinstaller
 ```
 
-For other distri use generic pyinstaller
+For other (Non Alpine) distri use generic pyinstaller
 ```
 pip install pyinstaller
 ```

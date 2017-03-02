@@ -31,9 +31,9 @@ def test(program):
         job = scheduler.add_job(test_func, IntervalTrigger(seconds=10), id=job_id, replace_existing=True)
     return job
 
-def test(program):
-    job = scheduler.add_job(test_func, IntervalTrigger(seconds=10))
-    return job
+#def test(program):
+#    job = scheduler.add_job(test_func, IntervalTrigger(seconds=10))
+#    return job
 
 def get_jobs():
     return '\n'.join([job.id for job in scheduler.get_jobs()])
@@ -44,15 +44,12 @@ def get_job(jobid):
 def remove_job(jobid):
     return str(scheduler.remove_job(jobid))
 
-def dir_scheduler():
-    return dir(scheduler)
-
 def setup_scheduler(program):
     def my_listener(event):
         if event.exception:
-            print('The job crashed :(')
+            logging.error('Job crashed: ' + str(event))
         else:
-            print('The job worked :)')
+            logging.info('Job executed: ' + str(event))
 
     scheduler.add_listener(
         my_listener, EVENT_JOB_EXECUTED | EVENT_JOB_ERROR
@@ -62,7 +59,7 @@ def setup_scheduler(program):
     program.add_command('remove_job', remove_job)
     scheduler.start()
     logging.info('Started scheduler')
-    test(program)
-    logging.info('Scheduled test job')
+    #test(program)
+    #logging.info('Scheduled test job')
 
 

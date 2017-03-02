@@ -63,7 +63,31 @@ class Service(service.Service):
         if self.got_sigterm():
             self.program.stop_function()
 
-def main():
+def main_ctl():
+    ctl = oi.CtlProgram('ctl program', config.ctl_url)
+    ctl.run()
+
+def main_d():
+    program = oi.Program('example1', config.ctl_url)
+    program.add_command('ping', lambda: 'pong')
+    program.add_command('state', lambda: program.state)
+    try:
+        from scheduler import setup_scheduler, scheduler
+    except ImportError: 
+        from example1.scheduler import setup_scheduler, scheduler
+    setup_scheduler(program)
+    if hasattr(config, 'register_hook'):
+        config.register_hook(
+            ctx=dict(
+                locals=locals(),
+                globals=globals(),
+                program=program
+            )
+        )
+    program.run()
+    scheduler.shutdown()
+
+def main_svc():
     import sys
 
     if len(sys.argv) < 2:
@@ -93,6 +117,16 @@ def main():
     else:
         sys.exit('Unknown command "%s".' % cmd)
 
+def main():
+    prog_name = sys.argv[0].lower()
+    if prog_name.endswith('.exe'):
+        prog_name = prog_name[:-4]
+    if prog_name.endswith('svc'):
+        main_svc()
+    elif prog_name.endswith('d'):
+        main_d()
+    else:
+        main_ctl()
 
 if __name__ == '__main__':
     if hasattr(config, 'main_hook'):

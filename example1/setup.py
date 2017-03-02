@@ -42,6 +42,7 @@ setup(
 
     entry_points={
         'console_scripts': [
+            'example1 = example1.example1:main',
             'example1d = example1.example1d:main',
             'example1ctl = example1.example1ctl:main',
             'example1svc = example1.example1svc:main',

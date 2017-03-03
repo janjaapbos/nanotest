@@ -1,6 +1,14 @@
 # nanotest
 Testing nanomsg
 
+Get the repo and submodules
+```
+git clone git@github.com:janjaapbos/nanotest.git
+cd nanotest
+
+git submodule init
+git submodule update
+```
 
 For Alpine:
 Link /usr/local/lib to /usr/local/lib64, or better fix how cffi finds the nanomsg library in /usr/local/lib64. ;-)
